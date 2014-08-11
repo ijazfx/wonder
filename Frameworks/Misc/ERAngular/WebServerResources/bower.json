@@ -1,0 +1,21 @@
+{
+  "name": "ERAngular",
+  "version": "1.0.0",
+  "homepage": "https://github.com/wocommunity/wonder",
+  "authors": [
+    "Farrukh Ijaz <ijazfx@gmail.com>"
+  ],
+  "description": "Wonder implementation for Angular JS",
+  "keywords": [
+    "wonder",
+    "webobjects"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
