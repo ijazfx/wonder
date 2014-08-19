@@ -1,15 +1,18 @@
 package com.company.application.app;
 
+import com.company.application.ui.components.Main;
 import com.webobjects.appserver.WOActionResults;
 import com.webobjects.appserver.WORequest;
 import com.webobjects.directtoweb.D2W;
 import com.webobjects.foundation.NSLog;
 
+import er.angular.ERAngularService;
+import er.angular.ERAngularSeviceType;
 import er.directtoweb.ERD2WDirectAction;
-import com.company.application.ui.components.Main;
 
-
+@ERAngularService(serviceName = "TestService", serviceType = ERAngularSeviceType.DIRECT_ACTION)
 public class DirectAction extends ERD2WDirectAction {
+
 	public DirectAction(WORequest request) {
 		super(request);
 	}
@@ -18,28 +21,29 @@ public class DirectAction extends ERD2WDirectAction {
 	public WOActionResults defaultAction() {
 		return pageWithName(Main.class.getName());
 	}
-	
-    /**
-     * Checks if a page configuration is allowed to render.
-     * Provide a more intelligent access scheme as the default just returns false. And
-     * be sure to read the javadoc to the super class.
-     * @param pageConfiguration
-     * @return
-     */
-    protected boolean allowPageConfiguration(String pageConfiguration) {
-        return false;
-    }
-    
+
+	/**
+	 * Checks if a page configuration is allowed to render. Provide a more
+	 * intelligent access scheme as the default just returns false. And be sure
+	 * to read the javadoc to the super class.
+	 * 
+	 * @param pageConfiguration
+	 * @return
+	 */
+	protected boolean allowPageConfiguration(String pageConfiguration) {
+		return false;
+	}
+
 	public WOActionResults loginAction() {
-		
+
 		String username = request().stringFormValueForKey("username");
 		String password = request().stringFormValueForKey("password");
-		
+
 		NSLog.out.appendln("***DirectAction.loginAction - username: " + username + " : password: " + password + "***");
-		
+
 		// ENHANCEME - add appropriate login behaviour here
-		
+
 		return D2W.factory().defaultPage(session());
 	}
-	
+
 }

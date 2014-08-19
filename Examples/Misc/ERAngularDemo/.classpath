@@ -23,6 +23,6 @@
 	<classpathentry kind="con" path="WOFramework/Ajax"/>
 	<classpathentry kind="con" path="WOFramework/WOLips"/>
 	<classpathentry kind="con" path="WOFramework/ERAngular"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/ERAngular"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/ERAngular"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
